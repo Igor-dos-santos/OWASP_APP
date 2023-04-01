@@ -260,13 +260,8 @@ Inside this same directory, create a style.css file:
 ```
 # For macOS/Linux use:
 touch public/style.css
-# For Windows PowerShell use:
-ni public/style.css
-```
+
   
-  
-  
-```
 Save your changes. 
 
   
