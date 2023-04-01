@@ -15,7 +15,8 @@ Node.js development process using nodemon to restart the server and browser-sync
 This is a fictional restaurant named WANTABYTE that specializes in making delicious food for developers.
 Using server-side rendering (SSR), the web app will consist of two views: a public login screen and a protected account information screen.
 
-#########Image of the secured page ########
+![Screenshot 2023-04-01 at 17 13 59](https://user-images.githubusercontent.com/56481210/229302211-ab5a2f0b-cab1-4808-a2e6-06fc04df1a93.png)
+
 
 ## Prerequisites
 - Node.js and JavaScript.
