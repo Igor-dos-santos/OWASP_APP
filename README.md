@@ -207,15 +207,17 @@ Next, you'll create an NPM script that configures and runs Browsersync to serve 
 "ui": "browser-sync start --proxy=localhost:8000 --files='**/*.css, **/*.pug, **/*.js' --ignore=node_modules --reload-delay 10 --no-ui --no-notify"
 ```
 
-```
+
 For a detailed explanation of Pug's functionality, refer to the Getting Started page of the Pug documentation.
 
 Based on the value of the isAuthenticated variable, the content of the div.NavButtons container is shown. Route controllers will also supply this value to the template, enabling it to render the appropriate button depending on the user's authentication state.
 
 Configure Express such that it uses Pug as the application's view template engine, uses the views subdirectory as the views source folder, and renders a view template as the response of a route controller to connect the templates with the controllers.
+
 ```
 npm run ui
 ```
+
 The terminal will output information on the local and external locations where the static pages are being served:
 
 ```
@@ -227,6 +229,7 @@ The terminal will output information on the local and external locations where t
  -------------------------------
 [Browsersync] Watching files...
 ```
+
 Browsersync opens a new window or tab on your operating system default browser automatically to present the web app interface — if it didn't, open http://localhost:3000/.
 
 To test this setup, you can make any change on the index.pug file, save it, and watch the site served on port 3000 update itself.
@@ -261,31 +264,38 @@ Inside this same directory, create a style.css file:
 ```
 # For macOS/Linux use:
 touch public/style.css
-
+```
   
 Save your changes. 
 
   
   
-This part regards the authentication of the web APP
+## This part is about the authentication of the web APP
 
   
   
 #Install the project dependencies:
- >npm install
+``` 
+npm install
+```
 
 #Run the app server using Nodemon:
->npm run dev
+```
+npm run dev
+```
 
 #In a separate terminal tab or window, serve the app frontend on a static server using Browsersync:
->npm run ui
+```
+npm run ui
+```
+
+## Do not forget to run both DEV and UI 
+Aut0 uses both ports to travel through authetnticated pages.
+
 
 Browsersync proxies the server running on port 8000 with nodemon.
 
-To see the app in action and start following the tutorial, visit http://localhost:8000 on your browser.
-
-  
- 
+To see the app in action and start following the tutorial, visit http://localhost:8000 on your browser. 
 
 
 Adding User Authentication to an Express App
@@ -325,11 +335,12 @@ As explained in the Passport.js "Overview" document, authentication takes a vari
 Passport.js offers different authentication mechanisms, known as strategies, to cater to the unique authentication requirements each application has. Strategies are packaged as individual modules and you can choose which strategies to employ, without creating unnecessary dependencies.
 
 You are going to use the Auth0 authentication strategy with Passport.js so that you don't have to worry about creating and managing user credentials yourself. To start, install the following packages:
-
-# npm install passport passport-auth0 express-session dotenv --save
+```
+npm install passport passport-auth0 express-session dotenv --save
+```
 
 Here's a breakdown of each package being installed:
-
+```
 passport: Passport.js is Express-compatible authentication middleware for Node.js.
 
 passport-auth0: This is the Auth0 authentication strategy for Passport.js.
@@ -337,7 +348,7 @@ passport-auth0: This is the Auth0 authentication strategy for Passport.js.
 express-session: This is a module to create and manage session middleware.
 
 dotenv: This is a zero-dependency module that loads environment variables from a .env file into process.env.
-
+```
 
 
 Securing an app's authentication login using Auth0 and Passport.js involves using Auth0 as an authentication provider and Passport.js as the middleware to handle the authentication process in your Node.js application. Auth0 provides a secure and reliable authentication service that allows you to add user authentication and authorization to your app without having to manage user data and credentials.
@@ -352,5 +363,7 @@ Here are the steps to implement Auth0 and Passport.js in your Node.js applicatio
 4.	Create the login and logout routes in your Node.js application to handle the authentication process. This involves redirecting the user to the Auth0 login page when they click the login button, and redirecting them back to your application after successful authentication.
 5.	Once the user is authenticated, create a session for them in your Node.js application using the express-session middleware. This session allows you to keep the user authenticated as they move around your application.
 6.	To secure the app's routes, use Passport.js middleware to authenticate users before allowing them access to protected resources. This involves creating middleware that checks if the user is authenticated and redirects them to the login page if they are not.
+
+
 In summary, Auth0 provides a secure and reliable authentication service that allows you to add user authentication and authorization to your app. Passport.js is used as middleware to handle the authentication process in your Node.js application. The steps involved in implementing Auth0 and Passport.js in your Node.js application include installing the required packages, setting up Passport.js middleware, creating login and logout routes, creating sessions, and securing app routes with Passport.js middleware.
 
