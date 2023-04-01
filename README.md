@@ -263,19 +263,18 @@ touch public/style.css
 # For Windows PowerShell use:
 ni public/style.css
 ```
-Then, update its content as follows:
-
-```
-/* public/style.css */
-
-body {
-  background: aqua;
-}
+  
+  
+  
 ```
 Save your changes. 
 
-## This part regards the authentication of the web APP
+  
+  
+This part regards the authentication of the web APP
 
+  
+  
 #Install the project dependencies:
  >npm install
 
@@ -289,6 +288,8 @@ Browsersync proxies the server running on port 8000 with nodemon.
 
 To see the app in action and start following the tutorial, visit http://localhost:8000 on your browser.
 
+  
+ 
 
 
 Adding User Authentication to an Express App
